@@ -1,0 +1,23 @@
+
+    <div *ngIf="postContent">
+       <h3>{{postContent.title}} by Author {{postContent.userId}}</h3> 
+       <hr>
+       <div class="row">
+           <div class="column">
+            <img src="../../assets/48389795_1285028831648708_4428382006849568768_n.jpg" alt="Snow" style="width:30%">
+           </div>
+           <div class="column">
+            {{postContent.body}}
+           </div>
+       </div>
+       <div>
+           <button (click)="likeAPost(postContent)" *ngIf="!isLiked">Like</button>
+           <button (click)="unlikeAPost(postContent)" *ngIf="isLiked">UnLike</button>
+           <button (click)="isCommentEnables=!isCommentEnables">Comment</button>
+       </div>
+       <br>
+       <div *ngIf="isCommentEnables">
+         <app-comments [postid]="postContent.id"></app-comments>
+  
+       </div>
+    </div>

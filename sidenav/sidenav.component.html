@@ -1,0 +1,29 @@
+
+
+<mat-toolbar color="primary" >
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h3 style="text-align: center;"> {{title}} </h3>
+    
+  </mat-toolbar-row>
+  
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side"> 
+    <mat-nav-list *ngFor="let post of allposts">
+        <button *ngIf="!isAuthor" mat-list-item (click)="getPostById(post.id,post.userId)">{{post.title}}</button>
+        <button *ngIf="isAuthor" mat-list-item (click)="getPostByauthorId(post)">Author {{post}}</button>
+      <!-- <a mat-list-item></a> -->
+      <hr>
+    </mat-nav-list>
+   </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <app-contentarea [posts]="allposts" [postContent]="postContent"></app-contentarea>
+    </div>
+       
+  </mat-sidenav-content>
+</mat-sidenav-container>

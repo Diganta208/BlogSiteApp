@@ -1,0 +1,20 @@
+<div>
+<textarea placeholder="Type your comment" [(ngModel)]="commment"></textarea><br>
+    <button (click)="postComment()">post</button>
+    <br>
+    <h3 *ngIf="!allComments && !thisPostComment ">No Commens Yet</h3>
+ 
+    <table *ngIf="allComments || thisPostComment" >
+         <tr *ngFor="let aComment of thisPostComment">
+            <td><b>{{aComment.email}}</b></td>
+            <td></td>
+            <td>{{aComment.comment}}</td>
+        </tr>
+        <tr *ngFor="let aComment of allComments">
+            <td><b>{{aComment.email}}</b></td>
+            <td></td>
+            <td>{{aComment.body}}</td>
+        </tr>
+    </table>
+
+</div>

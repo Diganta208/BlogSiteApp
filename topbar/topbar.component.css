@@ -1,0 +1,24 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+
+  mat-sidenav-container{
+      height: 100%;
+  }
+
+  mat-sidenav, mat-sidenav-content{
+      padding: 16px;
+  }
+
+  mat-sidenav{
+      background-color: blue;
+      width: 200px;   
+  }

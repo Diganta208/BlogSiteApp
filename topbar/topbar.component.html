@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+  
+      <h1 (click)="navigateToHomePage()">RideALike Blog</h1>
+      
+      <a style="margin-left: 20px; color: aliceblue;" [routerLink]="['/authors']">Author</a>
+      <span class="spacer"></span>
+      
+      <button mat-icon-button (click)="navigateToFavouritePage()">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <h3> {{totalLikes}}</h3>
+    </mat-toolbar-row>
+    
+  </mat-toolbar>
